@@ -27,6 +27,8 @@ fn parse_args() -> Arguments {
             "Error:".red().bold(),
             args.len()
         );
+
+        std::process::exit(1);
     }
 
     Arguments {
@@ -38,5 +40,6 @@ fn parse_args() -> Arguments {
 }
 
 fn main() {
-    print_usage()
+    let args = parse_args();
+    println!("{:?}", args);
 }
